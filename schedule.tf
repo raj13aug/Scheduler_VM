@@ -19,7 +19,7 @@ resource "google_compute_resource_policy" "uptime_schedule" {
 resource "google_project_iam_custom_role" "start_stop" {
   role_id     = "instanceScheduler"
   title       = "Instance Scheduler"
-  description = "Adds the missing permissions that the Compute Engine System service account needs to be able to start/stop instances"
+  description = "Compute Engine System service account needs to be able to start/stop instances"
   permissions = ["compute.instances.start", "compute.instances.stop"]
 }
 
