@@ -52,6 +52,7 @@ resource "google_compute_instance" "demo" {
     && sudo apt install postgresql-client jq iperf3 -y 
 EOT
   resource_policies       = [google_compute_resource_policy.uptime_schedule.id]
+  depends_on              = [time_sleep.wait_30_seconds]
 }
 
 
